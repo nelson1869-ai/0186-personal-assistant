@@ -42,6 +42,12 @@ pnpm desktop:tauri
 
 The API is available at `http://127.0.0.1:8000`, its OpenAPI docs at `/docs`, and the Vite UI at `http://localhost:1420`.
 
+## Phase 2 chat interface
+
+The desktop webview now provides a responsive conversation shell with local mock history, simulated streaming responses, stop/retry/regenerate controls, keyboard submission, and light/dark themes. The backend indicator continues to use the FastAPI health endpoint, while assistant replies are isolated behind a typed frontend service that can be replaced by a real streaming API in a later phase.
+
+The current conversations and assistant responses are intentionally in-memory only. Restarting the app resets them, and no prompt is sent to an AI provider.
+
 ## Verification
 
 ```bash

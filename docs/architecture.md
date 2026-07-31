@@ -10,6 +10,12 @@ The desktop calls the API over loopback HTTP. Its API URL is configurable throug
 
 No AI provider, database, native command, or operating-system permission is introduced in this phase. Those capabilities will be added behind backend and permission boundaries when their behavior is defined and testable.
 
+## Phase 2 frontend state
+
+The chat UI is organized by application shell, conversations, and chat features. Typed conversation/message state lives in the chat controller, while response generation is accessed only through `AssistantService`. The current implementation supplies a local async-stream mock; a future FastAPI streaming adapter can implement the same contract without coupling transport behavior to React components.
+
+Theme choice is local presentation state. Mock conversations are in-memory examples rather than persistence, and backend connectivity remains an independent health query through the shared API client.
+
 ## Health flow
 
 1. The desktop starts and requests `GET /api/v1/health`.

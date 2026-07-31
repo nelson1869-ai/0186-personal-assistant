@@ -159,7 +159,7 @@ wait_for_service "$FRONTEND_NAME" "$FRONTEND_URL" "$FRONTEND_PORT"
 
 backend_pid="$(metadata_value "$(metadata_file "$BACKEND_NAME")" pid)"
 frontend_pid="$(metadata_value "$(metadata_file "$FRONTEND_NAME")" pid)"
-printf '\nLocal Phase 1 application is ready.\n'
+printf '\nLocal application is ready.\n'
 printf 'API:      %s (PID %s)\n' "$BACKEND_URL" "$backend_pid"
 printf 'Frontend: %s (PID %s)\n' "$FRONTEND_URL" "$frontend_pid"
 printf 'PID files: %s/{backend,frontend}.pid\n' "$RUN_DIR"
