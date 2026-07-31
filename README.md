@@ -20,11 +20,17 @@ pnpm api:sync
 
 ## Development
 
-Run the backend and browser UI together:
+Run the FastAPI backend and Vite desktop webview server together from WSL:
 
 ```bash
-pnpm dev
+./scripts/start.sh
+./scripts/status.sh
+./scripts/stop.sh
 ```
+
+The launcher works from any current directory, records project-owned process metadata under `.run/`, and stores service output in `.run/logs/`. Starting it again gracefully stops only the processes created by the previous launcher. It never broadly kills Node.js or Python processes and refuses to take over ports owned by unrelated processes.
+
+Native Tauri execution and Windows installer testing must be run from PowerShell on Windows; `start.sh` intentionally starts only FastAPI and the Vite webview development server in WSL.
 
 Or run services separately:
 

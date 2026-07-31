@@ -1,6 +1,7 @@
 node_modules/
 dist/
 target/
+.run/
 .venv/
 .uv-cache/
 __pycache__/
