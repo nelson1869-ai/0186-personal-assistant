@@ -1,0 +1,26 @@
+{
+  "name": "0186-personal-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "start:local": "bash scripts/start.sh",
+    "stop:local": "bash scripts/stop.sh",
+    "status:local": "bash scripts/status.sh",
+    "dev": "concurrently -k -n api,desktop -c blue,green \"pnpm api:dev\" \"pnpm desktop:web\"",
+    "desktop:web": "pnpm --filter @0186/desktop dev",
+    "desktop:tauri": "pnpm --filter @0186/desktop tauri dev",
+    "api:dev": "uv --cache-dir .uv-cache run --project apps/api uvicorn app.main:app --reload --app-dir apps/api",
+    "api:sync": "uv --cache-dir .uv-cache sync --project apps/api --all-groups",
+    "test": "pnpm test:shell && pnpm test:desktop && pnpm test:api",
+    "test:shell": "bash tests/scripts/test_lifecycle.sh",
+    "test:desktop": "pnpm --filter @0186/desktop test",
+    "test:api": "uv --cache-dir .uv-cache run --project apps/api pytest apps/api/tests",
+    "lint": "pnpm --filter @0186/desktop lint && uv --cache-dir .uv-cache run --project apps/api ruff check apps/api",
+    "typecheck": "pnpm --filter @0186/desktop typecheck && uv --cache-dir .uv-cache run --project apps/api mypy apps/api/app",
+    "build": "pnpm --filter @0186/desktop build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
