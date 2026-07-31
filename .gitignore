@@ -1,66 +1,13 @@
-# =========================
-# Node
-# =========================
 node_modules/
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# =========================
-# Python
-# =========================
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.env
-
-# =========================
-# Rust / Tauri
-# =========================
-target/
-Cargo.lock
-
-# Keep Cargo.lock if you later build a Rust library.
-# For a desktop application, many teams choose to commit it.
-# You can remove the line above later if you decide to track it.
-
-# =========================
-# IDE
-# =========================
-.vscode/
-.idea/
-
-# =========================
-# OS
-# =========================
-.DS_Store
-Thumbs.db
-
-# =========================
-# Logs
-# =========================
-logs/
-*.log
-
-# =========================
-# Database
-# =========================
-*.db
-*.sqlite
-*.sqlite3
-
-# =========================
-# Build
-# =========================
 dist/
-build/
+target/
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.py[cod]
+.env
+.DS_Store
 coverage/
-
-# =========================
-# Environment
-# =========================
-.env.local
-.env.development
-.env.production

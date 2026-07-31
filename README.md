@@ -1,12 +1,46 @@
-# AI Personal Assistant
+# 0186 Personal Assistant
 
-A modern desktop AI assistant built with:
+Local-first personal assistant monorepo. Phase 1 provides a Tauri 2 desktop shell backed by React and TypeScript, plus a versioned FastAPI service.
 
-- React
-- TypeScript
-- Tauri
-- FastAPI
-- LangGraph
-- MCP
-- RAG
-- n8n
+## Prerequisites
+
+- Node.js 20+ and pnpm 9+
+- Python 3.12+ and uv
+- Rust and the [Tauri system prerequisites](https://v2.tauri.app/start/prerequisites/) for desktop development
+
+On Windows, run the API from WSL and the Tauri desktop app from PowerShell. The browser-only Vite workflow can run in either environment.
+
+## Setup
+
+```bash
+cp .env.example .env
+pnpm install
+pnpm api:sync
+```
+
+## Development
+
+Run the backend and browser UI together:
+
+```bash
+pnpm dev
+```
+
+Or run services separately:
+
+```bash
+pnpm api:dev
+pnpm desktop:web
+pnpm desktop:tauri
+```
+
+The API is available at `http://127.0.0.1:8000`, its OpenAPI docs at `/docs`, and the Vite UI at `http://localhost:1420`.
+
+## Verification
+
+```bash
+pnpm test
+pnpm build
+```
+
+See [docs/architecture.md](docs/architecture.md) for the initial boundaries and [docs/development.md](docs/development.md) for platform notes and troubleshooting.
