@@ -34,4 +34,3 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     """Return the cached process-wide settings instance."""
     return Settings()
-

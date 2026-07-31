@@ -22,4 +22,3 @@ async def test_openapi_includes_health_endpoint() -> None:
         response = await client.get("/openapi.json")
 
     assert "/api/v1/health" in response.json()["paths"]
-

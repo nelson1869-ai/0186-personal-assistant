@@ -62,4 +62,3 @@ jobs:
 
       - name: Build web frontend
         run: pnpm build
-

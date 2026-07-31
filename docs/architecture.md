@@ -15,4 +15,3 @@ No AI provider, database, native command, or operating-system permission is intr
 1. The desktop starts and requests `GET /api/v1/health`.
 2. FastAPI validates and serializes a `HealthResponse`.
 3. The desktop displays connected or unavailable state and permits a manual retry.
-

@@ -22,4 +22,3 @@ export async function getHealth(
 
   return (await response.json()) as HealthResponse;
 }
-

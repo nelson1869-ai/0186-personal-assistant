@@ -11,4 +11,3 @@ router = APIRouter(tags=["health"])
 async def health() -> HealthResponse:
     """Report whether the API process is available."""
     return HealthResponse(status="ok", service="assistant-api", version="0.1.0")
-

@@ -50,4 +50,3 @@ h1 { margin: .4rem 0 0; font-size: clamp(5rem, 18vw, 9rem); line-height: .9; let
   .status-card { grid-template-columns: auto 1fr; }
   .status-card button { grid-column: 2; justify-self: start; }
 }
-

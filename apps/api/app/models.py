@@ -11,4 +11,3 @@ class HealthResponse(BaseModel):
     status: Literal["ok"]
     service: str
     version: str
-
