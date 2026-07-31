@@ -43,4 +43,8 @@ pnpm test
 pnpm build
 ```
 
+## Automation
+
+GitHub Actions runs tests, linting, strict type checks, and the web build for pushes and pull requests. To create a Windows desktop release, update the application versions, push a tag such as `v0.1.0`, then review and publish the draft created in GitHub Releases.
+
 See [docs/architecture.md](docs/architecture.md) for the initial boundaries and [docs/development.md](docs/development.md) for platform notes and troubleshooting.

@@ -33,3 +33,8 @@ Copy `.env.example` to `.env`. Only values prefixed with `VITE_` are embedded in
 | `pnpm typecheck` | Run TypeScript and mypy |
 | `pnpm build` | Produce the browser UI bundle |
 
+## CI/CD
+
+`.github/workflows/ci.yml` validates every pull request into `main` and pushes to `main` or `agent/**` branches. It installs dependencies from the committed lockfiles and runs the same test, lint, typecheck, and frontend build commands used locally.
+
+`.github/workflows/release.yml` builds the Tauri application on Windows when a `v*` tag is pushed. It uploads the installer to a draft GitHub Release so binaries can be reviewed before publication. Before tagging, keep the version in `apps/desktop/package.json`, `apps/desktop/src-tauri/Cargo.toml`, and `apps/desktop/src-tauri/tauri.conf.json` aligned with the tag.
